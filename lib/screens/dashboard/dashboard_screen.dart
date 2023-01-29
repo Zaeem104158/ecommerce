@@ -76,7 +76,10 @@ class _DashPageState extends State<DashBoardScreen> {
                 label: kMessageBottomBarLable),
             _bottomNavigationBarItem(
                 icon: selectedPage == 2
-                    ? SvgPicture.asset(Assets.icons.postProductIcon)
+                    ? Padding(
+                      padding: const EdgeInsets.only(top:8.0),
+                      child: SvgPicture.asset(Assets.icons.postProductIcon),
+                    )
                     : SvgPicture.asset(Assets.icons.postProductIcon),
                 ),
             _bottomNavigationBarItem(

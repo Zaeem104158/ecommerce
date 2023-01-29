@@ -19,18 +19,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
-  List<String> categories = ["ALl", "Accessories", "Fashion", "Gadget"];
-  late TabController _controller;
+  List<String> categories = ["All", "Accessories", "Fashion", "Gadget"];
+  late TabController _tabController;
   int _selectedIndex = 0;
+
+
   @override
   void initState() {
+    
+    _tabController = TabController(length: 4, vsync: this);
     super.initState();
-    _controller = TabController(length: 4, vsync: this);
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 
@@ -54,28 +57,34 @@ class _HomeScreenState extends State<HomeScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextFormFieldComponent(
-                  onChanged: (value) {},
-                  label: "Search City",
-                  //expands: true,
-                  maxLines: 1,
-
-                  //padding: const EdgeInsets.only(left: 12.0, right: 12),
-                ),
-                TextFormFieldComponent(
-                  onChanged: (value) {},
-                  label: "Search District",
-                  //expands: true,
-                  //maxLines: 1,
-                  //padding: const EdgeInsets.only(left: 12.0, right: 12),
-                ),
-              ],
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: TextFormFieldComponent(
+                      onChanged: (value) {},
+                      label: "Search City",
+                      //expands: true,
+                      maxLines: 1,
+                            
+                      //padding: const EdgeInsets.only(left: 12.0, right: 12),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: TextFormFieldComponent(
+                      onChanged: (value) {},
+                      label: "Search District",
+                      //expands: true,
+                      //maxLines: 1,
+                      //padding: const EdgeInsets.only(left: 12.0, right: 12),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
           const TextComponent(
             "Deals",
             font: interFont,
@@ -88,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen>
             child: DefaultTabController(
               length: categories.length,
               child: TabBar(
-                controller: _controller,
+                controller: _tabController,
                 isScrollable: true,
                 labelColor: kTextColor,
                 labelStyle: const TextStyle(
@@ -114,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ),
           Expanded(
-            child: TabBarView(controller: _controller, children: const [
+            child: TabBarView(controller: _tabController, children: const [
               ProductCard(),
               ProductCard(),
               ProductCard(),
@@ -154,7 +163,7 @@ class ProductCard extends StatelessWidget {
             index,
           ) {
             return SizedBox(
-              height: 240,
+              //height: 240,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
