@@ -24,12 +24,21 @@ class $AssetsIconsGen {
   /// File path: assets/icons/post_product_icon.svg
   String get postProductIcon => 'assets/icons/post_product_icon.svg';
 
+  /// File path: assets/icons/pwInvisibleCustomIcon.svg
+  String get pwInvisibleCustomIcon => 'assets/icons/pwInvisibleCustomIcon.svg';
+
   /// File path: assets/icons/setting_icon.svg
   String get settingIcon => 'assets/icons/setting_icon.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [homeIcon, messageIcon, notificationIcon, postProductIcon, settingIcon];
+  List<String> get values => [
+        homeIcon,
+        messageIcon,
+        notificationIcon,
+        postProductIcon,
+        pwInvisibleCustomIcon,
+        settingIcon
+      ];
 }
 
 class $AssetsImagesGen {
@@ -39,12 +48,17 @@ class $AssetsImagesGen {
   AssetGenImage get productImage =>
       const AssetGenImage('assets/images/productImage.jpeg');
 
+  /// File path: assets/images/senderImage.jpeg
+  AssetGenImage get senderImage =>
+      const AssetGenImage('assets/images/senderImage.jpeg');
+
   /// File path: assets/images/userProfileImage.png
   AssetGenImage get userProfileImage =>
       const AssetGenImage('assets/images/userProfileImage.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [productImage, userProfileImage];
+  List<AssetGenImage> get values =>
+      [productImage, senderImage, userProfileImage];
 }
 
 class $AssetsLogosGen {

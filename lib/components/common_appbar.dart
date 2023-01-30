@@ -28,7 +28,6 @@ class CommonAppBarComponent extends StatelessWidget {
     return AppBar(
       backgroundColor: kWhiteColor,
       elevation: 0.0,
-      
       title: Padding(
         padding: padding,
         child: SizedBox(
@@ -82,33 +81,3 @@ String getInitials(String? user) {
     return name = "";
   }
 }
-
-
-
-
-
-
-
-
-
-// AppBar(
-//           backgroundColor: Colors.white,
-//       title: Padding(
-//         padding: const EdgeInsets.all(12.0),
-//         child: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             SvgPicture.asset(
-//               Assets.logos.appBarLogo,
-//               width: 50,
-//               height: 30,
-//               alignment: Alignment.topLeft,
-//             ),
-//             CircleAvatar(
-//               radius: 20,
-//               child: Text("Asd"),
-//             )
-//           ],
-//         ),
-//       ),
-//     )

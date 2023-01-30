@@ -1,11 +1,11 @@
 import 'dart:developer';
-
 import 'package:ecommerce/base/base_state.dart';
 import 'package:ecommerce/components/common_appbar.dart';
 import 'package:ecommerce/components/text_component.dart';
 import 'package:ecommerce/components/text_form_field_component.dart';
 import 'package:ecommerce/components/text_form_field_no_border_component.dart';
 import 'package:ecommerce/gen/assets.gen.dart';
+import 'package:ecommerce/screens/product_card_widget.dart';
 import 'package:ecommerce/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
@@ -23,10 +23,8 @@ class _HomeScreenState extends State<HomeScreen>
   late TabController _tabController;
   int _selectedIndex = 0;
 
-
   @override
   void initState() {
-    
     _tabController = TabController(length: 4, vsync: this);
     super.initState();
   }
@@ -57,34 +55,30 @@ class _HomeScreenState extends State<HomeScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: TextFormFieldComponent(
-                      onChanged: (value) {},
-                      label: "Search City",
-                      //expands: true,
-                      maxLines: 1,
-                            
-                      //padding: const EdgeInsets.only(left: 12.0, right: 12),
-                    ),
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: TextFormFieldComponent(
+                    onChanged: (value) {},
+                    label: "Search City",
+                    maxLines: 1,
+                    font: interFont,
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: TextFormFieldComponent(
-                      onChanged: (value) {},
-                      label: "Search District",
-                      //expands: true,
-                      //maxLines: 1,
-                      //padding: const EdgeInsets.only(left: 12.0, right: 12),
-                    ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: TextFormFieldComponent(
+                    onChanged: (value) {},
+                    label: "Search District",
+                    maxLines: 1,
+                    font: interFont,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
+          ),
           const TextComponent(
             "Deals",
             font: interFont,
@@ -135,117 +129,3 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 }
-
-class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Map> myProducts = List.generate(
-        100,
-        (index) => {
-              "id": index,
-              "name": "Men's Expedition Scout 40 Watch",
-              "price": index
-            }).toList();
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10.0,
-              crossAxisSpacing: 10.0,
-              mainAxisExtent: 220),
-          itemCount: myProducts.length,
-          itemBuilder: (
-            context,
-            index,
-          ) {
-            return SizedBox(
-              //height: 240,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 120,
-                    width: 156,
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(8)),
-                    child: Assets.images.productImage.image(),
-                  ),
-                  TextComponent(
-                    myProducts[index]["name"],
-                    padding: EdgeInsets.zero,
-                    fontSize: noDataFoundRegularFontSize,
-                    textAlign: TextAlign.start,
-                    fontWeight: titleFontWeight,
-                    lineHeight: k22LineHeight,
-                    font: interFont,
-                    color: kProductNameColor,
-                  ),
-                  TextComponent(
-                    "\$ ${myProducts[index]["price"]}",
-                    padding: EdgeInsets.zero,
-                    fontWeight: titleFontWeight,
-                    fontSize: textSmallFontSize,
-                    lineHeight: k18LineHeight,
-                    font: interFont,
-                    color: kPrimaryColor,
-                  )
-                ],
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-
-
-
-
-
-//child:  Container(
-            //   padding: const EdgeInsets.all(8.0),
-            //   color: Colors.transparent,
-            //   child:
-            //   ContainedTabBarView(
-            //     tabBarProperties: const TabBarProperties(
-            //       labelColor: kTextColor,
-            //       labelStyle: TextStyle(
-            //         fontFamily: interFont,
-            //         fontSize: noDataFoundRegularFontSize,
-            //         fontWeight: mediumFontWeight,
-            //       ),
-            //       labelPadding: EdgeInsets.zero,
-            //       unselectedLabelColor: kUnselectedTabBarLableColor,
-            //       unselectedLabelStyle: TextStyle(
-            //         fontFamily: interFont,
-            //         fontSize: noDataFoundRegularFontSize,
-            //         fontWeight: mediumFontWeight,
-            //       ),
-            //       indicatorColor: kPrimaryColor,
-            //       indicatorSize: TabBarIndicatorSize.label,
-            //     ),
-            //     tabs: const [
-            //       Text('All'),
-            //       Text('Accessories'),
-            //       Text("Fasion"),
-            //       Text('Gadget')
-            //     ],
-            //     views: const [
-            //       ProductCard(),
-            //       ProductCard(),
-            //       ProductCard(),
-            //       ProductCard(),
-            //     ],
-            //     onChange: (index) => log("$index"),
-            //   ),
-            // ),
