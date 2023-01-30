@@ -5,7 +5,7 @@ import 'package:ecommerce/components/text_component.dart';
 import 'package:ecommerce/components/text_form_field_component.dart';
 import 'package:ecommerce/gen/assets.gen.dart';
 import 'package:ecommerce/screens/dashboard/dashboard_screen.dart';
-import 'package:ecommerce/screens/otp_screen.dart';
+import 'package:ecommerce/screens/authscreen/otp_screen.dart';
 import 'package:ecommerce/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -5,7 +5,7 @@ import 'package:ecommerce/components/text_component.dart';
 import 'package:ecommerce/components/text_form_field_component.dart';
 import 'package:ecommerce/components/text_form_field_no_border_component.dart';
 import 'package:ecommerce/gen/assets.gen.dart';
-import 'package:ecommerce/screens/product_card_widget.dart';
+import 'package:ecommerce/screens/postproduct/product_card_widget.dart';
 import 'package:ecommerce/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';

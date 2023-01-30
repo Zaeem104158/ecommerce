@@ -1,8 +1,8 @@
-import 'package:ecommerce/screens/home_screen.dart';
-import 'package:ecommerce/screens/inbox_screen.dart';
-import 'package:ecommerce/screens/notification_screen.dart';
-import 'package:ecommerce/screens/post_product_screen.dart';
-import 'package:ecommerce/screens/setting_screen.dart';
+import 'package:ecommerce/screens/home/home_screen.dart';
+import 'package:ecommerce/screens/inbox/inbox_screen.dart';
+import 'package:ecommerce/screens/notification/notification_screen.dart';
+import 'package:ecommerce/screens/postproduct/post_product_screen.dart';
+import 'package:ecommerce/screens/setting/setting_screen.dart';
 import 'package:ecommerce/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

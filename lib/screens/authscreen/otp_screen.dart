@@ -3,7 +3,7 @@ import 'package:ecommerce/components/button_component.dart';
 import 'package:ecommerce/components/pin_text_form_fileld_component.dart';
 import 'package:ecommerce/components/text_component.dart';
 import 'package:ecommerce/gen/assets.gen.dart';
-import 'package:ecommerce/screens/signUp_screen.dart';
+import 'package:ecommerce/screens/authscreen/signUp_screen.dart';
 import 'package:ecommerce/utils/size_config.dart';
 import 'package:ecommerce/utils/style.dart';
 import 'package:flutter/material.dart';
